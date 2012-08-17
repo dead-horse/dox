@@ -311,4 +311,20 @@ module.exports = {
       done();
     });
   },
+
+  'test .extractDoc() whit a not exist path': function(done) {
+    dox.extractDoc('notexist', function(err, data) {
+      err.errno.should.equal(34);
+      done();
+    })
+  },
+
+  'test .extractDoc() whith a good path': function(done) {
+    dox.extractDoc(__dirname + '/fixtures/singleline.js', function(err, data) {
+      should.not.exist.err;
+      var all = data.shift();
+      all.code.should.equal("function foo() {\n  // Maybe useful\n  doSomething();\n}");
+      done();
+    })
+  }
 };
