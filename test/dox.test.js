@@ -260,7 +260,7 @@ module.exports = {
     var tag = dox.parseTag('@return {String} a normal string');
     tag.type.should.equal('return');
     tag.types.should.eql(['String']);
-    tag.description.should.equal('a normal string');
+    tag.description.should.equal('<p>a normal string</p>');
   },
 
   'test .parseTag() @augments': function(){

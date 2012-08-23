@@ -2,6 +2,27 @@
 
  Dox is a JavaScript documentation generator written with [node](http://nodejs.org). Dox no longer generates an opinionated structure or style for your docs, it simply gives you a JSON representation, allowing you to use _markdown_ and _JSDoc_-style tags.
 
+## Modify in this dox  
+ * Support this kind of comment: multiLine tags, only split by `\n@`.You can use the multiLine option to open it.   
+ * Support markdown in `@param` and `@return` 's description.   
+ * Add `exports.extractDoc` function, accept a path of file, callback the dox Json.   
+
+```js
+/**
+ * Description of this function 
+ * @param {Object} options 
+ * example:  
+ * ```
+ * {
+ *   raw: false,
+ *   multiLine: true
+ * }
+ * ```
+ * @return {String}
+ */
+```
+
+
 ## Installation
 
 Install from npm:
