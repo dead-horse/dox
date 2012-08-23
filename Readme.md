@@ -27,7 +27,7 @@
 
 Install from npm:
 
-    $ npm install -g dox
+    $ npm install dox-edp
 
 ## Usage Examples
 

@@ -326,5 +326,12 @@ module.exports = {
       all.code.should.equal("function foo() {\n  // Maybe useful\n  doSomething();\n}");
       done();
     })
+  },
+
+  'test .extractDocSync() whith a good path': function(done) {
+    var data = dox.extractDocSync(__dirname + '/fixtures/singleline.js');
+    var all = data.shift();
+    all.code.should.equal("function foo() {\n  // Maybe useful\n  doSomething();\n}");
+    done();
   }
 };
