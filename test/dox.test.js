@@ -333,5 +333,14 @@ module.exports = {
     var all = data.shift();
     all.code.should.equal("function foo() {\n  // Maybe useful\n  doSomething();\n}");
     done();
+  },
+
+  'test .extractDocSync() with no description': function (done) {
+    var data = dox.extractDocSync(__dirname + '/fixtures/nodescription.js');
+    var first = data.shift();
+    first.description.full.should.equal('');
+    first.tags.should.have.length(3);
+    first.tags[0].name.should.equal('name');
+    done();
   }
 };

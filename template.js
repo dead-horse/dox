@@ -23,7 +23,6 @@
 exports.methodOne = function(){};
 
 /**
- * 模拟方法二
  * @param {String} name       用户名`dead-horse`
  * @param {object} options     选项
  * @return {Boolean}
