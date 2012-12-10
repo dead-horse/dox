@@ -19,6 +19,7 @@
  *    } 
  * ```
  * @api public 
+ * @detail template.js
  */
 exports.methodOne = function(){};
 

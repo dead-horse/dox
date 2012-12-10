@@ -14,7 +14,8 @@ program
   .version(dox.version)
   .option('-r, --raw', 'output "raw" comments, leaving the markdown intact')
   .option('-m, --multiLine', 'accept multi line comments for tags')
-  .option('-d, --debug', 'output parsed comments for debugging');
+  .option('-d, --depth <n>', 'depth for detail', parseInt)
+  .option('-D, --debug', 'output parsed comments for debugging');
 
 // examples
 
@@ -41,7 +42,8 @@ process.stdin.on('data', function(chunk){ buf += chunk; });
 process.stdin.on('end', function(){
   var obj = dox.parseComments(buf, {
     raw: program.raw,
-    multiLine: program.multiLine
+    multiLine: program.multiLine,
+    depth: program.depth
   });
   if (program.debug) {
     process.stdout.write(util.inspect(obj, false, Infinity, true) + '\n');

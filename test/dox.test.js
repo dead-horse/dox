@@ -342,5 +342,11 @@ module.exports = {
     first.tags.should.have.length(3);
     first.tags[0].name.should.equal('name');
     done();
+  },
+
+  'test .extractDocSync() with depth': function (done) {
+    var data = dox.extractDocSync(__dirname + '/fixtures/detail.js', {depth: 1});
+    JSON.stringify(data[0].tags[2].detail).should.equal(JSON.stringify(dox.extractDocSync(__dirname + '/fixtures/d.js')));
+    done();
   }
 };
