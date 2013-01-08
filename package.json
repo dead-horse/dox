@@ -1,6 +1,6 @@
 {   "name": "dox-edp"
   , "description": "Markdown / JSdoc documentation generator"
-  , "version": "0.0.6"
+  , "version": "0.0.7"
   , "author":  "dead-horse <dead_horse@qq.com>"
   , "repository": { "type": "git", "url": "git://github.com/dead-horse/dox.git" }
   , "keywords": ["documentation", "docs", "markdown", "jsdoc"]
